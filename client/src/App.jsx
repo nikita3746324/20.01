@@ -2,22 +2,25 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Home from './components/Home'
 import Register from './components/Register'
-import {Link, link, useNavigate} from 'react-router-dom'
+import {BrowserRouter, Route, Routes, useNavigate} from 'react-router-dom'
+import Layout from './components/Layout'
+import Login from './components/Login'
+import Home from './components/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const navigate=useNavigate();
+
 
   return (
-    <>
-      <h2>Главная страница</h2>
-      <div>
-        <Link to='/'>Главная страница</Link>
-        <Link to='/register'>регистрация</Link>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+          <Route element={<Home/>}/>
+          <Route path='register' element={<Register/>}/>
+          <Route path='login'element={<Login/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
