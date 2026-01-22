@@ -3,7 +3,7 @@ import './Register.css'
 import { useNavigate,Link } from 'react-router-dom'
 
 const Register = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [form,setForm] = useState({
         username:'',
         password:'',
@@ -17,8 +17,10 @@ const Register = () => {
 
 
     return (
-        <div>
-            <h2>Страница регистрации</h2>
+        <div className='fullreg'>
+            <div className='nameglav'>
+                <h2>Страница регистрации</h2> 
+            </div>
             <form className='registerblock' onSubmit={handleSubmit}> 
                 <div className='registerdesing'>
                     <label htmlFor="">Имя пользователя</label>
@@ -46,10 +48,12 @@ const Register = () => {
                     <input 
                     placeholder='Подтвердите ваш пассворд' />
                 </div> */}
+                <div className='buttonreg'>
                 <button type='submit'>Зарегистрироваться</button>
+                </div>
             </form>
-            <div>
-                <p>У вас уже есть аккаунт? <a href="">Войти?</a></p>
+            <div className='voprosreg'>
+                <p>У вас уже есть аккаунт? <Link to='/login'>Войти</Link> </p>
             </div>
 
         </div>
