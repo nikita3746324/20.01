@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import './Login.css'
 
 const Login = () => {
     // const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Login = () => {
         navigate('/profile')};
 
     return (
-        <div>
+        <div className='glav'>
             <h2>Страница входа</h2>
             <form onSubmit={handleSubmit}>
                 <div>
